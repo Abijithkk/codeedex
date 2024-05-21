@@ -1,0 +1,16 @@
+.nav {
+     background-color: rgba(171, 159, 159, 0.5) !important; 
+}
+.navlop{
+     background-color: white !important;
+}   
+   @media (max-width: 768px) {
+     .navlop img {
+       height: 35px;
+       width: 90px;
+     }
+     .navlop .nav-link {
+       padding: 0.5rem 0;
+     }
+   }
+   
