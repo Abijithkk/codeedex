@@ -1,8 +1,6 @@
 /* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+
+
 
 .bg-black {
     background-color: #000;
@@ -15,10 +13,13 @@ body {
 .serviceimage {
     width: 100%;
     height: auto;
+    font-family: 'Rubik', sans-serif; 
+    font-weight: 400;
+    font-style: normal;
 }
 
 .servicehead {
-    font-family: Rubik, sans-serif;
+    font-family: 'Rubik', sans-serif; 
     font-size: 64px;
     font-weight: 600;
     line-height: 75.84px;
@@ -31,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 18%;
     background-color: black;
     padding: 20px;
 }
@@ -48,6 +49,30 @@ body {
 
 .full h1 {
     text-align: center;
+    margin-top: -100px;
+}
+
+@keyframes outlineMove {
+    0% {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+        border-color: rgba(241, 145, 161, 0.514);
+    }
+    25% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+        border-color: rgba(233, 130, 147, 0.422);
+    }
+    50% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
+        border-color: rgba(255, 192, 203, 0.45);
+    }
+    75% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        border-color: rgba(233, 130, 147, 0.468);
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+        border-color: rgba(255, 192, 203, 0.454);
+    }
 }
 
 .development-row {
@@ -59,6 +84,7 @@ body {
 }
 
 .development {
+    position: relative; /* Added to position the pseudo-element */
     text-align: center;
     flex: 1;
     min-width: 200px;
@@ -68,6 +94,23 @@ body {
     background-color: #222;
     border-radius: 10px;
     transition: transform 0.3s;
+}
+
+.development::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+    transition: border-color 0.3s;
+}
+
+.development:hover::before {
+    animation: outlineMove 2s linear infinite;
 }
 
 .development img {
@@ -85,57 +128,69 @@ body {
 }
 
 .prod h1 {
-    text-align: center;
+    font-size: 35px;
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
+    
     justify-content: space-between;
+    padding: 60px;
 }
 
-.card1 {
+.card {
+    flex: 0 0 calc(45% - 10px); /* Adjust width to fit two cards in one row */
+    margin-bottom: 20px; /* Space between rows */
     position: relative;
-    width: calc(50% - 20px);
-    margin: 10px;
-    box-sizing: border-box;
     overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s;
 }
 
-.card1 img {
+.card img {
     width: 100%;
     height: auto;
-    display: block;
-}
-
-.card1:hover {
-    transform: scale(1.05);
 }
 
 .overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    top: 0;
+    right: 0;
+    width: 73%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    transform: translateY(100%);
-    transition: transform 0.3s;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.card1:hover .overlay {
-    transform: translateY(0);
-}
 
-.overlay h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+/* Hover effect for larger screens */
+@media (min-width: 768px) {
+    .card:hover .overlay {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .overlay h1 {
+        font-size: 20px;
+        transition: font-size 0.3s ease;
+    }
+
+    .overlay p {
+        font-size: 14px;
+        transition: font-size 0.3s ease;
+    }
+
+    .card:hover .overlay h1 {
+        font-size: 24px;
+    }
+
+    .card:hover .overlay p {
+        font-size: 16px;
+    }
 }
 
 /* Responsive Styles */
@@ -182,18 +237,17 @@ body {
     }
 
     .development {
-        margin: 10px auto;
+        width: 315px;
+        margin-left: -50px;
     }
 
     .cards-container {
         flex-direction: column;
     }
-
     .card1 {
         width: calc(100% - 20px);
         margin: 10px auto;
     }
-
     .overlay {
         padding: 10px;
     }
@@ -206,16 +260,85 @@ body {
         margin-top: -10%;
         margin-left: 20%;
     }
-
     .parag {
         margin-top: 5%;
     }
-
     .full h1 {
         font-size: 18px;
     }
+ 
+}
 
-    .overlay h3 {
+
+@media (min-width: 1200px) {
+    .development-row {
+        flex-direction: row;      
+    }  
+}
+
+.development p {
+    font-size: 14px;
+}
+
+@media (min-width: 1500px) {
+    .development-row {
+        flex-direction: row;
+        
+    }
+    .development{
+        max-width: 395px;
+    }
+    .parag p {
+        margin-top: 34px;
+    }
+    .development p {
+        font-size: 20px;
+    }
+    .overlay p {
+        font-size: 20px;
+    }
+    .overlay h1{
+        font-size: 35px;
+    }
+    .parag p{
+        font-size: 17px;
+    }
+}
+@media (max-width: 370px) {
+    .moil{
+        margin-left: -4px;
+    }    
+}
+@media (min-width: 390px) {
+    .moil{
+        margin-left: 34px;
+    }  
+ 
+}
+@media screen and (min-width: 350px ) and (max-width : 600px) {
+  
+    .overlay h1{
+        font-size: 11px;
+    }
+    .overlay p{
+        font-size: 8px;
+    }
+    .cards-container{
+        padding: 30px;
+    }
+}
+@media screen and (min-width: 764px ) and (max-width : 1000px) {
+  
+    .overlay h1{
         font-size: 16px;
+    }
+    .overlay p{
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 390px ) and (max-width : 400px) {
+    .development{
+        margin-left: -69px;
     }
 }

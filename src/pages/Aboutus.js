@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './About.css'
 import Footer from '../components/Footer';
 import HeadNav from '../components/HeadNav';
+import Card3 from './Card3';
+import { Link } from 'react-router-dom';
 
 function Aboutus() {
 
@@ -9,18 +11,29 @@ function Aboutus() {
 
     const quotes = [
         {
+            text: "The Amana web application is excellent! It has made managing our tailoring services so much easier and more efficient."            ,
+            author: "-Amana Thobe"
+        },
+        {
+            text: "We are extremely satisfied with the website your team created for us. It looks fantastic, works flawlessly, and has significantly improved our online presence."         ,
+            author: "-Dwani Nirtha Vidyalaya"
+        },
+        {
+            text: "The Mr.Go platform is fantastic! It's easy to use and has made scheduling deliveries so convenient for me."            ,
+            author: "-Mrgo"
+        },
+        {
             text: "Although the wait time at this dentist’s office was longer than anticipated, the exceptional quality of care more than compensated for it. The staff exhibited friendliness, expertise, and ensured my comfort throughout the entire visit.",
-            author: "-Dwani Dance School"
+            author: "-TMAC"
         },
         {
-            text: "Although the wait time at this dentist’s office was longer than anticipated, the exceptional quality of care more than compensated for it. ",
-            author: "-Amana Thobe"
+            text: "The academic admission website your team created is outstanding! It's intuitive, informative, and has significantly streamlined our application process."            ,
+            author: "-Usher Academy"
         },
         {
-            text: "the exceptional quality of care more than compensated for it. The staff exhibited friendliness, expertise, and ensured my comfort throughout the entire visit.",
-            author: "-Amana Thobe"
+            text: "We love the bakery website your team created! It’s beautiful, user-friendly, and has really helped increase our customer engagement.",
+            author: "-Eman Bakes"
         },
-        // Add more quotes here
     ];
 
     useEffect(() => {
@@ -36,13 +49,31 @@ function Aboutus() {
     const handleDotClick = (index) => {
         setCurrentSlide(index);
     };
+    const styles = {
+        whatsappIcon: {
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: '#25D366',
+            color: 'white',
+            borderRadius: '50%',
+            width: '60px',
+            height: '60px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '30px',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+            zIndex: 1000,
+        }
+    }
     return (
 
         <div>
             <HeadNav></HeadNav>
             <div className='mains'>
-                <h1 className='text-center mt-5'>ABOUT CODEEDEX</h1>
-                <p className='text-center p-4' style={{fontSize:"17px"}}><span>Codeedex is a leading provider of high-quality, affordable, and convenient websites/Application
+                <h1 className='text-center mt-5 ot'>ABOUT CODEEDEX</h1>
+                <p className='text-center p-4 at' style={{fontSize:"17px"}}><span>Codeedex is a leading provider of high-quality, affordable, and convenient websites/Application
                     for businesses in the digital age. With a focus on affordability and EMI options, we provide a
                     one-of-a-kind solution for businesses seeking to prosper in the digital age. We have experienced
                     developers, skilled in delivering excellence, meticulously craft websites that not only meet but exceed client
@@ -63,39 +94,9 @@ function Aboutus() {
             </div>
             <div className='services p-5'>
                 <h1>Services</h1>
-                <p style={{ fontSize: "19px" }}>At Codeedex, we're dedicated to delivering results that exceed expectations. Partner with us and unlock the full potential of your online presence.</p>
-                <div className='container12 p-5'>
-                    <div className='div1'>
-                        <img src="https://i.postimg.cc/PqRW10r1/iconoir-developer.png" alt="" />
-                        <h4>Full Stack Development</h4>
-                        <p>Experience the latest tech with our full stack dev services. Our skilled team crafts strong, flexible solutions for your needs, from web and mobile apps to custom software. We've got it all covered, tailored just for you.</p>
-                    </div>
-                    <div className='div2'>
-                        <img src="https://i.postimg.cc/3N7Fwmxq/ion-server-outline-1.png" alt="" />
-                        <h4>Hosting</h4>
-                        <p>Let us handle the tech stuff. With Codeedex, your website or app is safe. Our hosting ensures top performance, security, and uptime, letting you focus on your business.</p>
-                    </div>
-                    <div className='div3'>
-                        <img src="https://i.postimg.cc/rp1T429P/arcticons-websitemonitor.png" alt="" />
-                        <h4>CMS Maintenance</h4>
-                        <p>We help keep your website fresh and running smoothly with our CMS maintenance. Our team takes care of everything. we make sure your CMS is always safe and up-to-date.</p>
-                    </div>
-                    <div className='div4'>
-                        <img src="https://i.postimg.cc/TwKZ98jx/carbon-application-web.png" alt="" />
-                        <h4>UI/UX Design</h4>
-                        <p>We create easy-to-use interfaces that attract users and boost sales. Whether you're starting fresh or updating, our designs will surpass what you expect.</p>
-                    </div>
-                    <div className='div5'>
-                        <img src="https://i.postimg.cc/YS3NjjTD/arcticons-emoji-web.png" alt="" />
-                        <h4>SEO</h4>
-                        <p>Improve your online presence and reach your audience with our SEO services. Our experts use proven strategies to boost your site's search rankings and drive organic traffic.</p>
-                    </div>
-                    <div className='div6'>
-                        <img src="https://i.postimg.cc/JzRvFH3P/icon-park-outline-market-analysis.png" alt="" />
-                        <h4>Digital Marketing</h4>
-                        <p>Expand your online presence and boost your brand with our digital marketing services. We handle social media and PPC ads to connect you with your audience.</p>
-                    </div>
-                </div>
+                <p style={{ fontSize: "19px" }} className='ot'>At Codeedex, we're dedicated to delivering results that exceed expectations. Partner with us and unlock the full potential of your online presence.</p>
+                
+                <Card3></Card3>
             </div>
             <div className='clients p-5'>
                 <h1>Client says</h1>
@@ -118,6 +119,13 @@ function Aboutus() {
                 </div>
             </div>
             <Footer></Footer>
+            <div style={styles.whatsappIcon}>
+                <Link to={"https://wa.me/919778564277"} style={{color:"white"}}>
+                    <a  target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-whatsapp"></i>
+                    </a>
+                </Link>
+            </div>
         </div>
     )
 }

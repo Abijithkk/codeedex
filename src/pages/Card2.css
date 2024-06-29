@@ -1,0 +1,103 @@
+.card-containerl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.cardf {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 354px;
+  background: linear-gradient(137deg, rgb(255, 0, 179) 0%, rgba(0,212,255,1) 100%);
+  transition: 0.3s ease;
+  border-radius: 30px;
+  filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 16px 8px;
+  text-decoration: none; /* Ensure the link doesn't show an underline */
+  color: inherit; /* Ensure the text color is inherited */
+}
+
+.cardf::after {
+  content: '';
+  background-color: #181818;
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s ease;
+  height: 98%;
+  width: 98%;
+  top: 1%;
+  left: 1%;
+  border-radius: 28px;
+}
+
+.cardf:hover {
+  filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 1));
+}
+
+.profile-image {
+  width: 120px; /* Adjust the size as needed */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  z-index: 2; /* Ensures the image stays above the overlay */
+}
+
+.card-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  z-index: 2; /* Ensures the text stays above the overlay */
+}
+
+.card-description {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 8px;
+  z-index: 2; /* Ensures the text stays above the overlay */
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .cardf {
+      width: calc(50% - 32px); /* Two cards per row */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardf {
+      width: calc(33.333% - 32px); /* Three cards per row */
+  }
+}
+/* .card-containerl{
+  gap: 200px;
+} */
+
+@media  (min-width: 1325px)  {
+  .card-containerl{
+  gap: 202px;
+}
+}
+
+@media screen and (min-width: 1326px) and (max-width: 1384px) {
+  .card-containerl {
+    gap: 143px;
+}
+}
+
+@media screen and (min-width: 1920px) and (max-width:2000px) {
+  .card-containerl{
+  gap: 250px;
+}
+}

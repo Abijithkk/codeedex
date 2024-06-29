@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Rubik', sans-serif; 
 }
 
 .bg-black {
@@ -226,3 +226,17 @@ body {
 
 
 
+@media (min-width: 1500px) {
+    .lead h1{
+        font-size: 40px;
+    }
+    .lead p {
+        font-size: 27px;
+    }
+    .quote{
+        font-size: 20px;
+    }
+    .author{
+        font-size: 20px;
+    }
+}

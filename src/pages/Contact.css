@@ -1,68 +1,141 @@
-/* General Styles */
-.button1 {
-  padding: 17px 40px;
-  border-radius: 50px;
-  cursor: pointer;
-  border: 0;
-  background-color: white;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+.oppo {
+  background-image: url("https://i.postimg.cc/Kzh2J2dV/6939893.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  height: 100vh;
+}
+.input1, .textarea1, select {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  font-size: 0.8rem;
+  border-radius: 4px; /* Optional: Add some border radius */
+}
+
+.input1:focus, .textarea1:focus, select:focus {
+  outline: 1px solid #00b4cf;
+}
+
+.containercon {
+  background-color: rgba(50, 47, 47, 0.9); /* Slight transparency */
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  max-width: 768px;
+  min-height: 480px;
+  margin: 0 10px;
+}
+
+.nu {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-containercon {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-containerop, .right-containerop {
+  padding: 20px;
+}
+
+.left-containerop {
+  background-color: rgba(26, 27, 28, 0.445);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-containerop {
+  background-color: rgba(255, 255, 255, 0.7); /* Transparency for right container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-inner-container, .right-inner-container {
+  text-align: center;
+}
+
+.input1, .textarea1 {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.input1:focus, .textarea1:focus {
+  outline: 1px solid #00b4cf;
+}
+
+.btnoy {
+  border-radius: 20px;
+  border: 1px solid rgb(33, 82, 115);
+  background-color: rgb(33, 82, 115);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.5s ease;
-  margin-top: 50px;
-  margin-left: -80px;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
 }
 
-.button1:hover {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.btnoy:hover {
+  opacity: 0.7;
 }
 
-.button1:active {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
-}
+@media only screen and (max-width: 600px) {
+  .left-containerop {
+    display: none;
+  }
 
-.css-1eed5fa-MuiInputBase-root-MuiInput-root::before {
-  border-bottom: 1px solid rgb(249 242 242) !important;
-}
+  .lg-view {
+    display: none;
+  }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .button1 {
-      margin-left: -60px;
-      padding: 15px 35px;
-      font-size: 14px;
+  .form-containercon {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .right-containerop {
+    width: 100%;
+    padding: 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .button1 {
-      margin-left: 0;
-      padding: 14px 30px;
-      font-size: 13px;
+@media only screen and (min-width: 600px) {
+  .form-containercon {
+    flex-direction: row;
   }
-  .text-center {
-      text-align: center !important;
+
+  .sm-view {
+    display: none;
+  }
+
+  .left-containerop, .right-containerop {
+    flex: 1;
   }
 }
 
-@media (max-width: 480px) {
-  .button1 {
-      margin-left: 0;
-      padding: 12px 25px;
-      font-size: 12px;
-      width: 100%;
-      text-align: center;
-  }
-  .mt-5 {
-      margin-top: 20px !important;
-  }
+form p {
+  text-align: left;
 }

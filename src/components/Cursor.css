@@ -1,0 +1,26 @@
+.cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ensure the cursor is on top of other content */
+  pointer-events: none; /* Allows the cursor to interact with the underlying content */
+}
+
+.large_circle,
+.small_circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.large_circle {
+  width: 30px; /* Initial size of larger circle */
+  height: 30px; /* Initial size of larger circle */
+  border: 2px solid rgba(255, 255, 255, 0.916);
+  background-color: transparent;
+}
+
+.small_circle {
+  width: 10px; /* Initial size of smaller circle */
+  height: 10px; /* Initial size of smaller circle */
+  background-color: rgba(255, 255, 255, 0.922);
+}
