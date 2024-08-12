@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import animation from '../assets/animation.mp4'
+import Globe from './Globe';
 
 const services = [
     {
@@ -74,6 +75,115 @@ function Home() {
             author: "-Eman Bakes"
         },
     ];
+    useEffect(() => {
+        if (window.particlesJS) {
+            window.particlesJS('animated-background', {
+                particles: {
+                    number: {
+                        value: 100,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#77a3a3'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#77a3a3',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'repulse'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 400,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+    }, []);
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) =>
@@ -166,11 +276,14 @@ function Home() {
     const handleMouseLeave = () => {
         setHoveredCard('c1');
     };
+    
     return (
         <div className='main'>
-            <div className='header-container'>
+            <div  className='header-container'>
                 <Header />
             </div>
+            
+            <div id="animated-background"></div>
             <div className='video-background'>
             <video autoPlay muted loop playsInline className='video' controls={false}>
                     <source src={web} type='video/mp4' />
@@ -198,16 +311,17 @@ function Home() {
                             </p>
                         </div>
                     </Col>
-                    <Col md={6}>
-                        <div>
-                        <video autoPlay muted loop playsInline className='anivid' controls={false}>
-                                <source src={animation} type='video/mp4' />
-                            </video>
-
+                    {/* <Col md={6}   id='gl' style={{ backgroundColor: 'black' }}>
+                        <div className='globe' >
+                            <Globe />
                         </div>
-                    </Col>
+                    </Col> */}
                 </Row>
+                
             </div>
+            {/* <div id='gl2' className='globe' >
+                            <Globe />
+                        </div> */}
             <div className='whycode p-5'>
                 <h1 className='ot'>Why Codeedex?</h1>
                 <div className="whycode-content mt-5">
@@ -235,7 +349,7 @@ function Home() {
             </div>
 
             <div className="serv p-5">
-                <h1 className="text-white"><b className="ot">Our Services</b></h1>
+                <h1 style={{zIndex:'2'}} className="text-white"><b className="ot">Our Services</b></h1>
                 <div className="wrapperr">
                     <div className="containercards">
                         {services.map((service) => (
@@ -283,9 +397,9 @@ function Home() {
             </div>
             {/* team */}
             <div style={styles.team} className='p-5  clientteam'>
-                <h1 style={{ color: "white" }} className='text-center mb-5'> <b className='ot'>Our Clients</b></h1>
-                <div className="carousel">
-                    <div className="carousel-track">
+                <h1 style={{ color: "white",zIndex:'2' }} className='text-center mb-5'> <b className='ot'>Our Clients</b></h1>
+                <div style={{zIndex:'2'}} className="carousel">
+                    <div  className="carousel-track">
                         {infiniteLogos.map((logo, index) => (
                             <div className="carousel-logo-wrapper" key={index}>
                                 <img src={logo} alt={`Client Logo ${index + 1}`} className="carousel-logo" />

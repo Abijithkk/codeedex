@@ -9,7 +9,7 @@ const Footer = () => {
     window.location.href = `tel:${phoneNumber}`;
   };
   return (
-    <div>
+    <div style={{zIndex:'2',position:'absolute'}}>
       <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -27,6 +27,8 @@ const Footer = () => {
             <Link to={'/about'}> <a href="#">About</a></Link>
 
             <Link to={'/contactus'}><a href="#">Contact</a></Link>
+            <Link to={'/terms'}><a href="#">Terms and Conditions</a></Link>
+            <Link to={'/cancel'}><a href="#">Cancellation / Refund polices</a></Link>
           </p>
 
           <p class="footer-company-name">Codeedex Technologies © 2024</p>
@@ -62,7 +64,7 @@ const Footer = () => {
 
             <a href="https://www.facebook.com/codeedextechnologies?mibextid=LQQJ4d"><i class="fa-brands fa-facebook text-white"></i></a>
             <a href="https://www.instagram.com/codeedextechnologies/?hl=en"><i class="fa-brands fa-square-instagram text-white"></i></a>
-            <a href="https://www.linkedin.com/company/codeedex-technologies/"><i class="fa-brands fa-linkedin text-white"></i></a>
+            <a href="https://www.linkedin.com/in/codeedex-technologies-3899b92b6/"><i class="fa-brands fa-linkedin text-white"></i></a>
             <a href="https://www.youtube.com/@CodeedexTechnologies/featured"><i class="fa-brands fa-youtube text-white"></i></a>
 
           </div>

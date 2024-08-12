@@ -54,7 +54,7 @@ const cardData = [
 
 function Card3() {
   return (
-    <Container>
+    <Container style={{zIndex:'2'}}>
       <Row>
         {cardData.map((card, idx) => (
           <Col key={idx} md={4} className="d-flex justify-content-center">

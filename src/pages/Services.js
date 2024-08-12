@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Services.css';
 import Footer from '../components/Footer';
 import HeadNav from '../components/HeadNav';
@@ -64,12 +64,123 @@ function Services() {
         }
     }
 
+    useEffect(() => {
+        if (window.particlesJS) {
+            window.particlesJS('animated-background', {
+                particles: {
+                    number: {
+                        value: 100,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#77a3a3'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#77a3a3',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'repulse'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 400,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+    }, []);
+
     return (
         <div>
             <HeadNav />
+            <div id="animated-background"></div>
             <div className='bg-black'>
-                <div>
-                    <img className='serviceimage' src="https://i.postimg.cc/02m50Myj/close-up-man-robotic-process-automation-concept-2.png" alt="services" />
+                <div >
+                    <img style={{zIndex:'2'}} className='serviceimage' src="https://i.postimg.cc/02m50Myj/close-up-man-robotic-process-automation-concept-2.png" alt="services" />
                     <p className='servicehead'>SERVICES</p>
                 </div>
                 <div className='parag'>
@@ -77,8 +188,8 @@ function Services() {
                 </div>
                 <div className='full'>
                     <h1 className='text-white p-5'><b className='at'>Our Full-Stack <br /> Development Services</b></h1>
-                    <div className='p-5 moil'>
-                        <div className='development-row p-3'>
+                    <div className='p-5 moil'style={{zIndex:'2'}}>
+                        <div className='development-row p-3' >
                             <div className='development'>
                                 <img src="https://i.postimg.cc/BbgwfLbT/Frame-52.png" alt="Python" />
                                 <h4 className='text-white'>Python</h4>

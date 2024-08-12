@@ -25,6 +25,7 @@
   margin: 16px 8px;
   text-decoration: none; /* Ensure the link doesn't show an underline */
   color: inherit; /* Ensure the text color is inherited */
+  z-index: 2;
 }
 
 .cardf::after {

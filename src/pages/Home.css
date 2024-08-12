@@ -32,8 +32,13 @@
   height: 600px; /* or whatever height you need */
   width: 100%; /* Ensure the container takes the full width */
   overflow: hidden;
+  z-index: 1;
 }
-
+.globe{
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
 .video {
   position: absolute;
   top: 50%;
@@ -235,13 +240,18 @@
   color: white;
   padding: 20px;
 }
+#gl2{
+  display: none;
+}
 .wrapperr {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
+  z-index: 2;
 }
+
 .containercards {
   height: 400px;
   display: flex;
@@ -358,6 +368,14 @@
     width: 100%;
   }
 }
+@media (max-width: 620px) {
+#gl{
+  display: none;
+}
+#gl2{
+  display: block;
+}
+}
 @media (max-width: 590px) {
   .content {
     margin-top: 28%;
@@ -412,6 +430,18 @@
 }
 .why{
   margin-top: 20px;
+}
+/* #gl{
+  width: 50px;
+} */
+@media (max-width: 700px) {
+  #gl {
+      height: 300px; 
+      
+  }
+  .globe-container {
+      height: 100%; 
+  }
 }
 .client img {
     width: 10px;

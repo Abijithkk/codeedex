@@ -42,7 +42,7 @@ const cardData = [
 
 function Card2() {
   return (
-    <div className="card-containerl">
+    <div className="card-containerl" style={{zIndex:'2'}}>
       {cardData.map((card, idx) => (
         <a href={card.link} key={idx} className="cardf mt-5" target="_blank" rel="noopener noreferrer">
           <img src={card.imgSrc} alt="Profile" className="profile-image" />

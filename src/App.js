@@ -8,6 +8,9 @@ import Services from './pages/Services';
 import Footer from './components/Footer';
 import Portfolio from './pages/Portfolio';
 import Cursor from './components/Cursor';
+import Globe from './pages/Globe';
+import Terms from './pages/Terms';
+import Cancel from './pages/Cancel';
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
         <Route path='/services' element={<Services></Services>} ></Route>
         <Route path='/footer' element={<Footer></Footer>} ></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>} ></Route>
+        <Route path='/globe' element={<Globe></Globe>} ></Route>
+        <Route path='/terms' element={<Terms></Terms>} ></Route>
+        <Route path='/cancel' element={<Cancel></Cancel>} ></Route>
+
       </Routes>
     </div>
   );

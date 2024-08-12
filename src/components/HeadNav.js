@@ -24,8 +24,8 @@ function HeadNav() {
   }, []);
 
   return (
-    <div> {/* Added a wrapper div */}
-      <Navbar expand="lg" className='navlop' style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', padding: '0.5rem 1rem' }}>
+    <div > {/* Added a wrapper div */}
+      <Navbar  expand="lg" className='navlop' style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', padding: '0.5rem 1rem',zIndex:'2' }}>
         <Container>
           <Link to={'/'}>
             <Navbar.Brand href="#home">
